@@ -1,0 +1,16 @@
+<input type="text" class="form-control" [(ngModel)]="couleur">
+
+<h3>
+La couleur est {{ couleur }}
+
+</h3>
+
+<div [hidden]="hd" class="cl" [style.backgroundColor]="couleur" >
+
+  Formation GTEC
+
+</div>
+
+<button class="btn btn-primary" (click)="Traitement()" >
+  Bouton
+</button>
