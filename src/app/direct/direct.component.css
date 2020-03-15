@@ -1,0 +1,18 @@
+.grand {
+    height: 200px;
+    width: 200px;
+}
+
+.c1 {
+    background-color: blueviolet;
+    color: burlywood;
+}
+.c2 {
+    background-color: pink;
+    color: grey;
+}
+.c3 {
+    background-color: green;
+    color: red;
+}
+

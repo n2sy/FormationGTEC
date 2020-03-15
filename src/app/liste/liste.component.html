@@ -1,5 +1,6 @@
 <ol>
-  <app-item (click)="sendPers(listePers[0])" [Pers]="listePers[0]"></app-item>
+  <!-- <app-item (click)="sendPers(listePers[0])" [Pers]="listePers[0]"></app-item>
   <app-item (click)="sendPers(listePers[1])" [Pers]="listePers[1]"></app-item>
-  <app-item (click)="sendPers(listePers[2])" [Pers]="listePers[2]"></app-item>
+  <app-item (click)="sendPers(listePers[2])" [Pers]="listePers[2]"></app-item> -->
+  <app-item *ngFor="let p of listePers" (click)="sendPers(p)" [Pers]="p"></app-item>
 </ol>

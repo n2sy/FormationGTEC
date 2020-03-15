@@ -1,0 +1,21 @@
+<div class="grand" [ngStyle]="{
+  'backgroundColor': bgcolor,
+  'color' : color,
+  'font-size' : '30px'
+}">
+
+ Exemple de NgStyle
+
+</div>
+
+<div [ngClass]="{
+  'c1': class1,
+  'c2': class2,
+  'c3': class3
+}" >
+
+ Exemple de NgClass
+
+</div>
+
+<button class="btn btn-primary" (click)="switchClass()">Change Class</button>

@@ -10,6 +10,7 @@ import { CvComponent } from './cv/cv.component';
 import { ListeComponent } from './liste/liste.component';
 import { ItemComponent } from './item/item.component';
 import { DetailComponent } from './detail/detail.component';
+import { DirectComponent } from './direct/direct.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DetailComponent } from './detail/detail.component';
     CvComponent,
     ListeComponent,
     ItemComponent,
-    DetailComponent
+    DetailComponent,
+    DirectComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@
       <app-liste (selectedPers)="RecupPersFromListe($event)" [listePers]="listePersonne" ></app-liste>
     </div>
     <div class="col-md-7">
-      <app-detail [PersSelected]="selectedPers" ></app-detail>
+      <app-detail *ngIf="selectedPers" [PersSelected]="selectedPers" ></app-detail>
     </div>
   </div>
 </div>
