@@ -7,6 +7,7 @@ import { Personne } from '../model/personne';
   styleUrls: ['./cv.component.css']
 })
 export class CvComponent implements OnInit {
+  selectedPers : Personne;
   listePersonne : Personne[] = [
     new Personne(1, "nidhal", "jelassi", 35, "enseignant", "nidhal.jpg"),
     new Personne(2, "bart", "simpson", 15, "ingénieur", "bart.jpg"),
@@ -16,6 +17,10 @@ export class CvComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  RecupPersFromListe(x) {
+    this.selectedPers = x;
   }
 
 }
