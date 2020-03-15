@@ -1,0 +1,24 @@
+<div appCustomDir class="grand">
+
+  Test de directive personnalisé
+
+</div>
+<hr>
+<div [ngStyle]="{
+  'backgroundColor': bgcolor,
+  'color' : color,
+  'fontSize' : size,
+  'font-family' : font
+}" > Formation GTEC </div>
+
+Background Color : <br>
+<input type="text" class="form-control" [(ngModel)]="bgcolor">
+Text Color : <br>
+<input type="text" class="form-control" [(ngModel)]="color">
+Font Size : <br>
+<input #sz type="number" class="form-control" (change)="changerSize(sz.value)">
+Font Family : <br>
+<select [(ngModel)]="font">
+  <option *ngFor="let f of listeFonts" [value]="f">{{f}}</option>
+</select>
+

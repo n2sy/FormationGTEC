@@ -11,6 +11,9 @@ import { ListeComponent } from './liste/liste.component';
 import { ItemComponent } from './item/item.component';
 import { DetailComponent } from './detail/detail.component';
 import { DirectComponent } from './direct/direct.component';
+import { MsWordComponent } from './ms-word/ms-word.component';
+import { CustomDirDirective } from './custom-dir.directive';
+import { NoImagePipe } from './no-image.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { DirectComponent } from './direct/direct.component';
     ListeComponent,
     ItemComponent,
     DetailComponent,
-    DirectComponent
+    DirectComponent,
+    MsWordComponent,
+    CustomDirDirective,
+    NoImagePipe
   ],
   imports: [
     BrowserModule,
