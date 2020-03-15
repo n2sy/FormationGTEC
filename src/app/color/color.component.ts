@@ -18,4 +18,13 @@ export class ColorComponent implements OnInit {
     this.hd = !this.hd
   }
 
+  TraitementDuPere(msg) {
+    alert(msg);
+  }
+
+  changeCouleur(cl) {
+    console.log(cl.value);
+    this.couleur = cl.value;
+  }
+
 }

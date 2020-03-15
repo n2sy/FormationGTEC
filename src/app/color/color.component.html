@@ -1,5 +1,5 @@
-<input type="text" class="form-control" [(ngModel)]="couleur">
-
+<!-- <input type="text" class="form-control" [(ngModel)]="couleur"> -->
+<input #cl type="text" class="form-control" (change)="changeCouleur(cl)">
 <h3>
 La couleur est {{ couleur }}
 
@@ -14,3 +14,5 @@ La couleur est {{ couleur }}
 <button class="btn btn-primary" (click)="Traitement()" >
   Bouton
 </button>
+
+<app-child (msgToParent)="TraitementDuPere($event)" [couleurFils]="'pink'" ></app-child>
