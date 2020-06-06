@@ -14,6 +14,16 @@ import { DirectComponent } from './direct/direct.component';
 import { MsWordComponent } from './ms-word/ms-word.component';
 import { CustomDirDirective } from './custom-dir.directive';
 import { NoImagePipe } from './no-image.pipe';
+import { ListePersonneService } from './liste-personne.service';
+import { NewAccountComponent } from './new-account/new-account.component';
+import { AccountComponent } from './account/account.component';
+import { HomeAccountComponent } from './home-account/home-account.component';
+import { RecrueComponent } from './recrue/recrue.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { GTEC_ROUTING } from './app.routing';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ErrorComponent } from './error/error.component';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +38,20 @@ import { NoImagePipe } from './no-image.pipe';
     DirectComponent,
     MsWordComponent,
     CustomDirDirective,
-    NoImagePipe
+    NoImagePipe,
+    NewAccountComponent,
+    AccountComponent,
+    HomeAccountComponent,
+    RecrueComponent,
+    AccueilComponent,
+    NavbarComponent,
+    ErrorComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    GTEC_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]

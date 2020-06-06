@@ -4,3 +4,6 @@
   <app-item (click)="sendPers(listePers[2])" [Pers]="listePers[2]"></app-item> -->
   <app-item *ngFor="let p of listePers" (click)="sendPers(p)" [Pers]="p"></app-item>
 </ol>
+<!-- 
+<button class="btn-primary" (click)="showList()">
+  Show List Personnes from ListComponent</button>  -->

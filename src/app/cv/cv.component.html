@@ -1,10 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-5">
-      <app-liste (selectedPers)="RecupPersFromListe($event)" [listePers]="listePersonne" ></app-liste>
+      <app-liste (selectedPers)="RecupPersFromListe($event)"  ></app-liste>
     </div>
     <div class="col-md-7">
       <app-detail *ngIf="selectedPers" [PersSelected]="selectedPers" ></app-detail>
     </div>
   </div>
 </div>
+
+<!-- <button (click) = "addPerson()">Add New Person</button> -->
