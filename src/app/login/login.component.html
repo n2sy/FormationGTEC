@@ -1,3 +1,53 @@
-<p>
-  login works!
-</p>
+<form #f="ngForm" (ngSubmit)="ShowForm(f)" >
+
+  <!-- <input ngModel #test="ngModel" required minlength="6" pattern="nidhalJelassi" type="text" class="form-control" name="test">
+  <div class="alert alert-warning" *ngIf="test.invalid && test.touched" >
+    <p *ngIf="test.errors.required" >Ce champ est obligatoire !</p>
+    <p *ngIf="test.errors.minlength">Le nombre de caractères ne doit pas être inférieur à 6 ! !</p>
+    <p *ngIf="test.errors.pattern">Ce champ a un pattern égal à nidhalJelassi!</p>
+
+  </div> -->
+
+  <div ngModelGroup="credentials" #cred="ngModelGroup">
+    <label for="name">Login</label>
+    <input ngModel #n="ngModel" required email type="email" class="form-control" name="nom" id="name">
+
+    <div *ngIf="n.invalid && n.touched" class="alert alert-danger">Ce champ doit etre une adresse mail</div>
+
+    <label for="password">Password</label>
+    <input ngModel required type="text" class="form-control" name="motdepasse" id="password">
+  </div>
+
+  <div class="alert alert-primary" *ngIf="cred.invalid && cred.dirty">
+    Invalid Credentials
+  </div>
+
+
+  <label for="section">Section</label>
+  <select class='form-control' id='section' [ngModel]="defaultSection" name="section">
+    <option value="gl">Génie Logiciel</option>
+    <option value="dsen">Data Science</option>
+    <option value="dmwm">Web et Mobile</option>
+  </select>
+  <br>
+  <input [(ngModel)]="option" type="text" class="form-control" name="option" id="option">
+  {{ option }}
+
+  <br>
+  <hr>
+  <pre>
+    {{ f.value | json }}
+  </pre>
+
+  <button class="btn btn-primary">Submit</button>
+  <br><br>
+  <button class="btn btn-info" (click)="resetForm(f)">Reset</button>
+  <br><br>
+  <button class="btn btn-success" (click)="randomPwd(f)">Random Pwd</button>
+  <br><br>
+  <button class="btn btn-success" (click)="randomPwdv2(f)">Random Pwd</button>
+  <br><br>
+  <button class="btn btn-success" (click)="randomv3(f)">Random 3 Pwd</button>
+
+
+</form>

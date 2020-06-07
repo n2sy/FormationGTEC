@@ -8,6 +8,7 @@ import { ErrorComponent } from './error/error.component';
 import { InfoComponent } from './info/info.component';
 import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
+import { LoginComponent } from './login/login.component';
 
 const gtecRoutes : Routes = [
     {path : '', component: AccueilComponent},
@@ -19,6 +20,7 @@ const gtecRoutes : Routes = [
         {path : 'edit/:id', component: EditComponent}
     ]},
     {path : 'color', component: ColorComponent},
+    {path : 'login', component: LoginComponent},
     {path : 'word', component: MsWordComponent},
     {path : 'accounts', component: HomeAccountComponent},
     {path : 'error', component: ErrorComponent},
