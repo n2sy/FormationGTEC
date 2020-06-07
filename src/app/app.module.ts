@@ -24,6 +24,9 @@ import { GTEC_ROUTING } from './app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ErrorComponent } from './error/error.component';
 import { InfoComponent } from './info/info.component';
+import { AddComponent } from './add/add.component';
+import { EditComponent } from './edit/edit.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { InfoComponent } from './info/info.component';
     AccueilComponent,
     NavbarComponent,
     ErrorComponent,
-    InfoComponent
+    InfoComponent,
+    AddComponent,
+    EditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

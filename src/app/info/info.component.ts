@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ListePersonneService } from '../liste-personne.service';
 import { Personne } from '../model/personne';
 
@@ -11,6 +11,7 @@ import { Personne } from '../model/personne';
 export class InfoComponent implements OnInit {
   pers : Personne;
   constructor(private activatedRoute : ActivatedRoute,
+    private router : Router,
     private listeService : ListePersonneService) { }
 
   ngOnInit() {
@@ -28,5 +29,11 @@ export class InfoComponent implements OnInit {
       }
     );
   }
+
+  GoToEdit() {
+    this.router.navigate(['cv/edit', this.pers['id']]);
+  }
+
+  
 
 }
