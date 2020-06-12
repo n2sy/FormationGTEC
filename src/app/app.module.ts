@@ -27,6 +27,8 @@ import { InfoComponent } from './info/info.component';
 import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -52,12 +54,14 @@ import { LoginComponent } from './login/login.component';
     InfoComponent,
     AddComponent,
     EditComponent,
-    LoginComponent
+    LoginComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    GTEC_ROUTING
+    GTEC_ROUTING,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

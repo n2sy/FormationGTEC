@@ -41,7 +41,7 @@
               <a [routerLink]="['/cv', 3]">
                 To Another Person
               </a>
-              <button class="btn btn-danger">
+              <button class="btn btn-danger" (click)="deletePerson()">
                 Delete
               </button>
               <button class="btn btn-primary" (click)="GoToEdit()" >

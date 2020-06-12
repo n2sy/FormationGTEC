@@ -8,7 +8,7 @@
 
   </div> -->
 
-  <div ngModelGroup="credentials" #cred="ngModelGroup">
+  <!-- <div ngModelGroup="credentials" #cred="ngModelGroup"> -->
     <label for="name">Login</label>
     <input ngModel #n="ngModel" required email type="email" class="form-control" name="nom" id="name">
 
@@ -16,9 +16,9 @@
 
     <label for="password">Password</label>
     <input ngModel required type="text" class="form-control" name="motdepasse" id="password">
-  </div>
+  <!-- </div> -->
 
-  <div class="alert alert-primary" *ngIf="cred.invalid && cred.dirty">
+  <!-- <div class="alert alert-primary" *ngIf="cred.invalid && cred.dirty">
     Invalid Credentials
   </div>
 
@@ -37,17 +37,17 @@
   <hr>
   <pre>
     {{ f.value | json }}
-  </pre>
+  </pre> -->
 
   <button class="btn btn-primary">Submit</button>
-  <br><br>
+  <!-- <br><br>
   <button class="btn btn-info" (click)="resetForm(f)">Reset</button>
   <br><br>
   <button class="btn btn-success" (click)="randomPwd(f)">Random Pwd</button>
   <br><br>
   <button class="btn btn-success" (click)="randomPwdv2(f)">Random Pwd</button>
   <br><br>
-  <button class="btn btn-success" (click)="randomv3(f)">Random 3 Pwd</button>
+  <button class="btn btn-success" (click)="randomv3(f)">Random 3 Pwd</button> -->
 
 
 </form>

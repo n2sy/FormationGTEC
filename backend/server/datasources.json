@@ -1,0 +1,14 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "nidhaldb" : {
+    "host" : "localhost",
+    "port" : 8889,
+    "database" : "Softway2019",
+    "user" : "root",
+    "password" : "root",
+    "connector" : "mysql"
+  }
+}

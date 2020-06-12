@@ -5,8 +5,7 @@ import { ListePersonneService } from '../liste-personne.service';
 @Component({
   selector: 'app-liste',
   templateUrl: './liste.component.html',
-  styleUrls: ['./liste.component.css'],
-  providers : [ListePersonneService]
+  styleUrls: ['./liste.component.css']
 })
 export class ListeComponent implements OnInit {
   @Input() listePers : Personne[];
@@ -15,7 +14,15 @@ export class ListeComponent implements OnInit {
   constructor(private persService : ListePersonneService) { }
 
   ngOnInit() {
-    this.listePers = this.persService.getListePersonnes();
+    this.persService.getListePersonnesAPI().subscribe(
+        (reponse : Personne[]) => {
+          this.listePers = reponse;
+        },
+        (error) => {
+          console.log('Error with getListePersonnesAPI()');
+          
+        }
+    )
   }
 
   sendPers(p : Personne) {

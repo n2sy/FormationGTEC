@@ -34,6 +34,14 @@ export class InfoComponent implements OnInit {
     this.router.navigate(['cv/edit', this.pers['id']]);
   }
 
+  deletePerson() {
+    if(confirm('Vous êtes sûr de vouloir supprimer cette personne ?'))
+      { 
+        this.listeService.deletePerson(this.pers);
+        this.router.navigate(['cv']);
+      }
+  }
+
   
 
 }
