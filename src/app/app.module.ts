@@ -29,6 +29,7 @@ import { EditComponent } from './edit/edit.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpComponent } from './http/http.component';
+import { loginInterceptorProvider } from './login.interceptor';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,7 @@ import { HttpComponent } from './http/http.component';
     GTEC_ROUTING,
     HttpClientModule
   ],
-  providers: [],
+  providers: [loginInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

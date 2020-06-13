@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Personne } from './model/personne';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -27,9 +27,25 @@ export class ListePersonneService {
     return this.listePersonneS.find((p) => p.id == id)
   }
 
+  getPersonneByIdAPI(id) : Observable<Personne> {
+    return this.http.get<Personne>(`${this.link}/${id}`);
+
+  }
+
   addPerson(p) {
     p['id'] = this.listePersonneS[this.listePersonneS.length - 1].id + 1;
     this.listePersonneS.push(p);
+  }
+
+  addPersonAPI(p) : Observable<any> {
+    // const myToken = localStorage.getItem('token');
+    // console.log(myToken);
+    // if(myToken) {
+    //   const par = new HttpParams().set('access_token', myToken);
+    //   return this.http.post(this.link, p, {params : par});
+    // }
+    return this.http.post(this.link, p);
+
   }
 
   updatePerson(p) {
@@ -37,8 +53,24 @@ export class ListePersonneService {
     this.listePersonneS[i] = p;
   }
 
+  updatePersonAPI(p) : Observable<any>  {
+    return this.http.put(this.link, p);
+
+  }
+
   deletePerson(p) {
     let i = this.listePersonneS.indexOf(p);
     this.listePersonneS.splice(i, 1);
+  }
+
+  deletePersonAPI(id) : Observable<any> {
+    // const myToken = localStorage.getItem('token');
+    // console.log(myToken);
+    // if(myToken) {
+    //   const par = new HttpParams().set('access_token', myToken);
+    //    return this.http.delete(`${this.link}/${id}`, {params : par});
+    // }
+    return this.http.delete(`${this.link}/${id}`);
+
   }
 }

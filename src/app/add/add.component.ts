@@ -16,10 +16,17 @@ export class AddComponent implements OnInit {
   }
 
   AddPerson(p) {
-    this.PersService.addPerson(p);
-    this.router.navigate(['cv']);
-    console.log(this.PersService.listePersonneS);
+    //this.PersService.addPerson(p);
     
+    this.PersService.addPersonAPI(p).subscribe(
+      (reponse) => {
+        this.router.navigate(['cv']);
+      },
+      (error) => {
+        alert("Vous n'avez pas les permissions nécessaires !")
+        console.log('Error with addPersonAPI');
+      }
+    );
 
   }
 

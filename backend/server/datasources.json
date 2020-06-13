@@ -3,12 +3,13 @@
     "name": "db",
     "connector": "memory"
   },
-  "nidhaldb" : {
-    "host" : "localhost",
-    "port" : 8889,
-    "database" : "Softway2019",
-    "user" : "root",
-    "password" : "root",
-    "connector" : "mysql"
+  "nidhaldb": {
+    "host": "localhost",
+    "port": 8889,
+    "database": "Softway2019",
+    "password": "root",
+    "name": "nidhaldb",
+    "user": "root",
+    "connector": "mysql"
   }
 }

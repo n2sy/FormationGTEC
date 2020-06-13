@@ -20,12 +20,17 @@ export class InfoComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(
       (reponse : Params) => {
-        this.pers = this.listeService.getPersonneById(reponse['id']);
-        console.log(this.pers);
-        
+          this.listeService.getPersonneByIdAPI(reponse['id']).subscribe(
+          (rep : Personne) => {
+            this.pers = rep;
+          },
+          (error) => {
+            console.log('Error with getPersonneByIdAPI');   
+          }
+        )
       },
       (error) => {
-        console.log('Erreur avec InfosComponent');  
+        console.log('Erreur avec InfosComponent - Route Params');  
       }
     );
   }
@@ -37,8 +42,16 @@ export class InfoComponent implements OnInit {
   deletePerson() {
     if(confirm('Vous êtes sûr de vouloir supprimer cette personne ?'))
       { 
-        this.listeService.deletePerson(this.pers);
-        this.router.navigate(['cv']);
+        //this.listeService.deletePerson(this.pers);
+        this.listeService.deletePersonAPI(this.pers['id']).subscribe(
+          (reponse) => {
+            this.router.navigate(['cv']);
+          },
+          (error) => {
+            console.log('Error with DeleteAPI');
+          }
+        )
+        
       }
   }
 

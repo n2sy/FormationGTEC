@@ -6,7 +6,7 @@
     <a class="nav-link" [routerLink]="['cv']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">CV</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [routerLink]="['cv/add']" routerLinkActive="active">Add CV</a>
+    <a class="nav-link" *ngIf="auth.isLogged()" [routerLink]="['cv/add']" routerLinkActive="active">Add CV</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" [routerLink]="['color']" routerLinkActive="active">Color</a>
@@ -18,6 +18,9 @@
     <a class="nav-link" [routerLink]="['accounts']" routerLinkActive="active">Accounts</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [routerLink]="['login']" routerLinkActive="active">Login</a>
+    <a class="nav-link" *ngIf="!auth.isLogged()" [routerLink]="['login']" routerLinkActive="active">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" *ngIf="auth.isLogged()" (click)="seDeconnecter()">Logout</a>
   </li>
 </ul>

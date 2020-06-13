@@ -16,16 +16,33 @@ export class EditComponent implements OnInit {
 
   ngOnInit() {
     this.activatedroute.params.subscribe(
-      (p : Params) => {
-        this.pers = this.persService.getPersonneById(p['id'])
-        console.log(this.pers);
+      (reponse : Params) => {
+          this.persService.getPersonneByIdAPI(reponse['id']).subscribe(
+          (rep : Personne) => {
+            this.pers = rep;
+          },
+          (error) => {
+            console.log('Error with getPersonneByIdAPI');   
+          }
+        )
+      },
+      (error) => {
+        console.log('Erreur avec InfosComponent - Route Params');  
       }
-    )
+    );
   }
 
   updatePerson() {
-    this.persService.updatePerson(this.pers);
-    this.router.navigate(['cv'])
+    //this.persService.updatePerson(this.pers);
+    this.persService.updatePersonAPI(this.pers).subscribe(
+      (reponse) => {
+        this.router.navigate(['cv'])
+      },
+      (error) => {
+        console.log('Error with updatePersonAPI');
+        
+      }
+    );
   }
 
 }

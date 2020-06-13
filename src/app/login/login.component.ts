@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +10,25 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   defaultSection = "gl";
   option = "";
-  constructor(private router : Router) { }
+  erreur : boolean = false;
+  constructor(private router : Router, private auth : AuthService) { }
 
   ngOnInit() {
   }
 
-  ShowForm(f) {
-    this.router.navigate(['cv']);
+  seConnecter(f) {
+    this.auth.login(f.value).subscribe(
+      (reponse) => {
+        localStorage.setItem('token', reponse['id']);
+        this.router.navigate(['cv']);
+      },
+      (error) => {
+        this.erreur = true;
+        f.reset();
+      }
+    )
+    //console.log(f)
+    //this.router.navigate(['cv']);
     
   }
 
