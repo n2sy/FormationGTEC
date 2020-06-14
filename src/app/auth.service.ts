@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  link = "http://localhost:3000/api/Users"
+  link = "http://localhost:3000/api/Users/login"
   constructor(private http : HttpClient) { }
 
   login(identifiants) : Observable<any> {
     console.log(identifiants);
-    return this.http.post(this.link+'/login', identifiants);
+    return this.http.post(this.link, identifiants);
   }
 
   logout() {

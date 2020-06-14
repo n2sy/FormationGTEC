@@ -39,7 +39,7 @@ export class EditComponent implements OnInit {
         this.router.navigate(['cv'])
       },
       (error) => {
-        console.log('Error with updatePersonAPI');
+        console.log('Error with updatePersonAPI : '+ error);
         
       }
     );

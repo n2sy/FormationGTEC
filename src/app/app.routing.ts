@@ -11,10 +11,11 @@ import { EditComponent } from './edit/edit.component';
 import { LoginComponent } from './login/login.component';
 import { LoginGuard } from './login.guard';
 import { LogoutGuard } from './logout.guard';
+import { RhManagerComponent } from './rh-manager/rh-manager.component';
 
 const gtecRoutes : Routes = [
     {path : '', component: AccueilComponent},
-    // {path : 'cv', component: CvComponent, children : [
+    //{path : 'cv', component: CvComponent, children : [
     {path : 'cv', children : [
         {path : '', component: CvComponent},
         {path : 'add', component: AddComponent, canActivate : [LoginGuard]},
@@ -25,6 +26,7 @@ const gtecRoutes : Routes = [
     {path : 'login', component: LoginComponent, canActivate : [LogoutGuard]},
     {path : 'word', component: MsWordComponent},
     {path : 'accounts', component: HomeAccountComponent},
+    {path : 'rh', component: RhManagerComponent},
     {path : 'error', component: ErrorComponent},
     {path : '**', redirectTo: 'error'},
 ]
